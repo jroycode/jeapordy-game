@@ -1602,5 +1602,33 @@
         { "question": "What is the name of the structure that anchors the tooth to the jawbone?", "answer": "The periodontal ligament", "difficulty": 5 },
         { "question": "What is the name of the hormone secreted by the pineal gland that regulates sleep?", "answer": "Melatonin", "difficulty": 5 },
         { "question": "What is the name of the nerve that controls the diaphragm for breathing?", "answer": "The phrenic nerve", "difficulty": 5 }
+    ],
+    "Aaron": [
+        {"question": "Who does Aaron share a birthday with?", "answer": " Honey Bee and Poppa", "difficulty": 2},
+        {"question": "Who is Aaron's Celebrity Crush?", "answer": "Mommy Sweeney", "difficulty": 3},
+        {"question": "What is Aaron's biggest fear?", "answer": "Heights", "difficulty": 2},
+        {"question": "What is the highest welding credintial that Aaron posseses", "answer": "Certified Welding Inspector", "difficulty": 5},
+        {"question": "What is Aaron's most played video game?", "answer": "Minecraft", "difficulty": 4},
+        {"question": "What objects has Aaron busted his head on?", "answer": "Toilet and Windowsill", "difficulty": 3},
+        {"question": "What is Aaron's favorite word?", "answer": "Cunt", "difficulty": 4},
+        {"question": "What was Aaron's first job?", "answer": "Concessions Stand at Golf Park", "difficulty": 5},
+        {"question": "Which of Aaron's girlfriends did Mom hate the most?", "answer": "Savannah", "difficulty": 1},
+        {"question": "Who in this room has seen Aaron's ass?", "answer": "Everyong", "difficulty": 1}
+    ],
+    "Rachel": [
+        {"question": "What was Rachel's childhood nickname?", "answer": "Pood", "difficulty": 4},
+        {"question": "What is Rachel's middle name?", "answer": "Danielle", "difficulty": 1},
+        {"question": "What is Rachel's job title?", "answer": "Payroll Tax Specialist", "difficulty": 3},
+        {"question": "What is Rachel's favorite book?", "answer": "A little Life", "difficulty": 3},
+        {"question": "What is Rachel's favorite pizza topping?", "answer": "Black Olives", "difficulty": 1},
+        {"question": "What is Rachel's favorite drink?", "answer": "Coke", "difficulty": 2},
+        {"question": "What are Rachel's 3 favorite reality TV shows?", "answer": "Jersey Shore, Sister Wives and Vanderpump Rules", "difficulty": 5},
+        {"question": "What is Rachel's favorite childhood movie?", "answer": "Spirit", "difficulty": 2},
+        {"question": "What was Rachel suspended for in the 6th grade?", "answer": "Threatening to push someone down the stairs", "difficulty": 4},
+        {"question": "What is Rachel's Zodiac sign?", "answer": "Sagittarius", "difficulty": 3},
+        {"question": "Name one of Rachel's celebrity crushes", "answer": "Harry Styles, Billie Eilish and Jensen Ackles", "difficulty": 3},
+        {"question": "What is Rachel's biggest fear?", "answer": "Crickets", "difficulty": 5},
+        {"question": "What is another State that Rachel has lived in?", "answer": "Texas or Georgia", "difficulty": 4},
+        {"question": "Out of the top 5, where did Rachel place in her graduating class?", "answer": "Number 3", "difficulty": 2}
     ]
 }
