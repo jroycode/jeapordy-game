@@ -1,38 +1,321 @@
-.App {
+body {
+  background: #000000;
+  font-family: 'Consolas', 'Courier New', monospace;
+  margin: 0;
+  color: #0ff; /* Neon cyan text */
+}
+
+.app,
+.welcome-screen {
+  background: #111;
+  border: 2px solid #0ff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #0ff;
+  padding: 20px;
+  max-width: 1200px;
+  width: 95%;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+    margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.welcome-screen {
+    text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.welcome-screen input {
+    background: #222;
+    color: #0ff;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #0ff;
+    border-radius: 4px;
+    width: calc(100% - 22px);
+    box-sizing: border-box;
+}
+
+.welcome-screen button {
+    background: #0ff;
+    border: none;
+    color: #000;
+    padding: 12px 24px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.welcome-screen button:hover {
+    background: #00f0ff;
+}
+
+.welcome-screen ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.welcome-screen li {
+    padding: 8px;
+    border-bottom: 1px solid #0ff;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.category {
+  border: 1px solid #0ff;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
+  background: #222;
+  box-shadow: 0 0 5px #0ff;
+}
+
+.category h2 {
+    background-color: #333;
+    color: #0ff;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+    border-bottom: 1px solid #0ff;
+}
+
+.question {
+  background-color: #00008b;
+  color: #0ff;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #0ff;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: bold;
+  min-height: 50px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.question:hover {
+  background-color: #001080;
+  transform: scale(1.05);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.question.answered {
+  background-color: #444;
+  cursor: default;
+  opacity: 0.5;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #111;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #0ff;
+  box-shadow: 0 0 15px #0ff;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content button {
+    background: #0ff;
+    border: none;
+    color: #000;
+    padding: 12px 24px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.modal-content button:hover {
+    background: #00f0ff;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #0ff;
+}
+
+.player-select {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.player-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.player-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #0ff;
+  color: #000;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.player-buttons button:hover {
+    background: #00f0ff;
+}
+
+.player-buttons button.active-player {
+  background: #FF00FF; /* neon magenta for active player */
+  color: #000;
+  font-weight: bold;
+}
+
+.score {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.game-over {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff;
+}
+
+.game-over div {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.play-again-button {
+  background-color: #00f0ff;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 4px 2px;
+  font-weight: bold;
+}
+.play-again-button:hover {
+  background-color: #0ff;
+}
+
+.reset-button {
+  background-color: #ff00ff;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 4px 2px;
+  font-weight: bold;
+}
+.reset-button:hover {
+  background-color: #f0f;
+}
+
+/* Challenge and Punishment already have animations from previous steps */
+.challenge-modal .modal-content {
+  background: #111;
+  animation: pulse 1.5s infinite ease-in-out;
+  border-color: #ff0;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 10px #ff0; }
+  50% { transform: scale(1.05); box-shadow: 0 0 20px #ff0; }
+  100% { transform: scale(1); box-shadow: 0 0 10px #ff0; }
+}
+
+.punishment-modal .modal-content {
+  background: #111;
+  animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both;
+  border-color: #f00;
+  box-shadow: 0 0 10px #f00;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-2px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Timer bar */
+.timer-bar {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background: #222;
+  border: 1px solid #0ff;
+  border-radius: 4px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.timer-fill {
+  height: 100%;
+  background: linear-gradient(to right, #0f0, #0ff, #00f);
+  transition: width 1s linear;
+}
+
+/* Time-up animation on the modal when time expires */
+.time-up {
+  animation: timeUpFlash 1s forwards;
+}
+
+@keyframes timeUpFlash {
+  0% { background: #111; }
+  50% { background: #f00; color: #fff; }
+  100% { background: #111; }
+}
+
+/* Modify the question-modal for a cyberpunk vibe */
+.question-modal .modal-content {
+  background: #111;
+  border-color: #0ff;
+  box-shadow: 0 0 15px #0ff;
 }
