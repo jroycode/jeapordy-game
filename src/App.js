@@ -148,7 +148,7 @@ function App() {
 
     const handleAddPlayer = () => {
         if (newPlayerName.trim() !== '') {
-            setPlayers([...players, { name: newPlayerName.trim(), score: 25 }]);
+            setPlayers([...players, { name: newPlayerName.trim(), score: 20 }]);
             setNewPlayerName('');
         }
     };
@@ -266,7 +266,7 @@ function App() {
     }, [questionsData, usedQuestions]);
 
     const handlePlayAgain = () => {
-        setPlayers(prevPlayers => prevPlayers.map(player => ({ ...player, score: 25 })));
+        setPlayers(prevPlayers => prevPlayers.map(player => ({ ...player, score: 20 })));
         setupBoard();
         setGameOver(false);
     }
